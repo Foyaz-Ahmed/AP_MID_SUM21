@@ -1,0 +1,34 @@
+﻿@model List< TaskApplication.Models.Student>
+@{
+    ViewBag.Title = "List";
+}
+<h2 align="center">All Students List</h2>
+    <div class="container">
+        <table class="table table-condensed">
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Dob</td>
+                <td>Credit</td>
+                <td>CGPA</td>
+                <td>Department Id</td>
+                <td>Action</td>
+            </tr>
+            
+           @foreach(var student in Model) { 
+                <tr>
+                    <td>@student.Id</td>
+                    <td>@student.Name</td>
+                    <td>@student.Dob</td>
+                    <td>@student.Credit</td>
+                    <td>@student.CGPA</td>
+                    <td>@student.Dept_id</td>
+                    <td>
+                        <a href="/Student/Edit/@student.Id" class="btn btn-primary">Update</a>
+                        <a href="/Student/Delete/@student.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+           }
+        </table>
+    </div>
+

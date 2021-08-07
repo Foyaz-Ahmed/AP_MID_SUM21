@@ -1,0 +1,34 @@
+﻿@model TaskApplication.Models.Admin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2 align="center">Login Page</h2>
+        <form method = "post" action="/Student/Index">
+            <table align="center">
+                <tr>
+                    <td><input type="text" name="Username" placeholder="Username" class="form-control" /></td>
+                    <td>@Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="Password" placeholder="Password" class="form-control" /></td>
+                    <td>@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="submit" value="Login" class="btn btn-primary" /></td>
+                    
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

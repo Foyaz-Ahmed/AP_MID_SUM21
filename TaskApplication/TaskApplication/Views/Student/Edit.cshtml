@@ -1,0 +1,16 @@
+﻿@model TaskApplication.Models.Student
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 align="center">Edit Students</h2>
+<form method="post" aciton="">
+    <input type="text" class="form-control" name="Name" placeholder="name" value="@Model.Name" />
+    <input type="date" class="form-control" name="Dob" placeholder="Date of birth" value="@Model.Dob" />
+    <input type="text" class="form-control" name="Credit" placeholder="Credit" value="@Model.Credit" />
+    <input type="text" class="form-control" name="CGPA" placeholder="CGPA" value="@Model.CGPA" />
+    <input type="text" class="form-control" name="Dept_id" placeholder="Department Id" value="@Model.Dept_id" />
+    <br />
+    <input type="submit" value="Update" name="submit" class="btn btn-success" />
+</form>
+

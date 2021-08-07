@@ -1,0 +1,16 @@
+<table class="table table-striped" style="margin-left:300px; width:800px;">
+  <tr>
+    <td>Order Id</td>
+    <td>Order Date</td>
+    <td>Order Time</td>
+    <td>Amount</td>
+    <td>Status</td>
+  </tr>
+  <tr ng-repeat="d in details">
+      <td>{{d.orderid}}</td>
+      <td>{{d.order_date}}</td>
+      <td>{{d.order_time}}</td>
+      <td>{{d.amount}}</td>
+      <td class="btn btn-danger">{{d.status}}</td>
+  </tr>
+</table>

@@ -1,0 +1,6 @@
+D:\DEsktop\.NetFrameWrk\AssignmentApplication\BusinessEnitityLayer\bin\Debug\BusinessEnitityLayer.dll
+D:\DEsktop\.NetFrameWrk\AssignmentApplication\BusinessEnitityLayer\bin\Debug\BusinessEnitityLayer.pdb
+D:\DEsktop\.NetFrameWrk\AssignmentApplication\BusinessEnitityLayer\obj\Debug\BusinessEnitityLayer.csproj.AssemblyReference.cache
+D:\DEsktop\.NetFrameWrk\AssignmentApplication\BusinessEnitityLayer\obj\Debug\BusinessEnitityLayer.csproj.CoreCompileInputs.cache
+D:\DEsktop\.NetFrameWrk\AssignmentApplication\BusinessEnitityLayer\obj\Debug\BusinessEnitityLayer.dll
+D:\DEsktop\.NetFrameWrk\AssignmentApplication\BusinessEnitityLayer\obj\Debug\BusinessEnitityLayer.pdb
