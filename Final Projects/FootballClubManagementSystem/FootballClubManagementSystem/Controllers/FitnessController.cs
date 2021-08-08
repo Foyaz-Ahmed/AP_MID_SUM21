@@ -11,12 +11,32 @@ namespace FootballClubManagementSystem.Controllers
 {
     public class FitnessController : ApiController
     {
+        [Route("api/Fitness/All")]
+        [HttpGet]
+        public List<FitnessDetailsModel> GetFitnessDetails() {
+
+            return FitnessService.GetFitnessDetails();
+        }
         [Route("api/Fitness/Add")]
         [HttpPost]
         public void AddFitness(AddFitnessModel model)
         {
 
             FitnessService.AddFitness(model);
+        }
+        [Route("api/FitnessEdit/{id}")]
+        [HttpPost]
+        public void FitnessEdit(EditFitnessModel obj)
+        {
+            FitnessService.FitnessEdit(obj);
+        }
+
+        [Route("api/Fitness/Delete/{id}")]
+        [HttpGet]
+        public void FitnessDelete(int id)
+        {
+
+            FitnessService.FitnessDelete(id);
         }
     }
 }

@@ -46,8 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperConfig\AutoMapperSettings.cs" />
+    <Compile Include="CoachService.cs" />
     <Compile Include="FitnessService.cs" />
+    <Compile Include="FixtureService.cs" />
+    <Compile Include="FormationService.cs" />
     <Compile Include="PerformanceService.cs" />
+    <Compile Include="PhysioService.cs" />
     <Compile Include="PlayerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaryService.cs" />

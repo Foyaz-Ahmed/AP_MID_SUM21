@@ -41,15 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCoachModel.cs" />
     <Compile Include="AddFitnessModel.cs" />
+    <Compile Include="AddFixtureModel.cs" />
     <Compile Include="AddPerformanceModel.cs" />
+    <Compile Include="AddPhysioModel.cs" />
     <Compile Include="AddPlayerModel.cs" />
     <Compile Include="AddSalaryModel.cs" />
-    <Compile Include="DeletePlayerModel.cs" />
+    <Compile Include="CoachInfoModel.cs" />
+    <Compile Include="CoachModel.cs" />
+    <Compile Include="EditFitnessModel.cs" />
+    <Compile Include="EditPerformanceModel.cs" />
     <Compile Include="EditPlayerModel.cs" />
+    <Compile Include="EditSalaryModel.cs" />
+    <Compile Include="FitnessDetailsModel.cs" />
     <Compile Include="FitnessModel.cs" />
+    <Compile Include="FixtureModel.cs" />
+    <Compile Include="FormationModel.cs" />
+    <Compile Include="PerformanceDetailsModel.cs" />
     <Compile Include="PerformanceModel.cs" />
+    <Compile Include="PhysioInfoModel.cs" />
+    <Compile Include="PhysioModel.cs" />
     <Compile Include="PlayerModel.cs" />
+    <Compile Include="PlayerInfoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaryDetails.cs" />
     <Compile Include="SalaryModel.cs" />

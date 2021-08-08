@@ -22,5 +22,16 @@ namespace BLL
             var info = AutoMapper.Mapper.Map<List<Salary>, List<SalaryDetails>>(data);
             return info;
         }
+
+        public static void SalaryEdit(EditSalaryModel obj)
+        {
+            var data = AutoMapper.Mapper.Map<EditSalaryModel, Salary>(obj);
+            SalaryRepo.SalaryEdit(data);
+        }
+
+        public static void SalaryDelete(int id)
+        {
+            SalaryRepo.SalaryDelete(id);
+        }
     }
 }

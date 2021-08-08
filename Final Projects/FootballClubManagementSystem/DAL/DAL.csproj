@@ -59,6 +59,7 @@
     <Compile Include="Coach.cs">
       <DependentUpon>FCMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="CoachRepo.cs" />
     <Compile Include="FCMS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -81,9 +82,11 @@
     <Compile Include="Fixture.cs">
       <DependentUpon>FCMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="FixtureRepo.cs" />
     <Compile Include="Formation.cs">
       <DependentUpon>FCMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormationRepo.cs" />
     <Compile Include="LogIn.cs">
       <DependentUpon>FCMS.tt</DependentUpon>
     </Compile>
@@ -94,6 +97,7 @@
     <Compile Include="Physio.cs">
       <DependentUpon>FCMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="PhysioRepo.cs" />
     <Compile Include="Player.cs">
       <DependentUpon>FCMS.tt</DependentUpon>
     </Compile>

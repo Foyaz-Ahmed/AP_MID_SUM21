@@ -13,6 +13,6 @@ namespace BEL
         public string Grade { get; set; }
         public double Bonus { get; set; }
         public string Status { get; set; }
-        public ICollection<PlayerModel> Players { get; set; }
+        public ICollection<PlayerInfoModel> Players { get; set; }
     }
 }

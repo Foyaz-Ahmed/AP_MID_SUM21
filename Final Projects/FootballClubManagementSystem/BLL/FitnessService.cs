@@ -17,5 +17,24 @@ namespace BLL
             FitnessRepo.AddFitness(data);
 
         }
+
+        public static void FitnessEdit(EditFitnessModel obj)
+        {
+            var data = AutoMapper.Mapper.Map<EditFitnessModel, Fitness>(obj);
+            FitnessRepo.FitnessEdit(data);
+        }
+
+        public static List<FitnessDetailsModel> GetFitnessDetails()
+        {
+            var data = FitnessRepo.GetFitnessDetails();
+            var info = AutoMapper.Mapper.Map<List<Fitness>, List<FitnessDetailsModel>>(data);
+            return info;
+        }
+        
+
+        public static void FitnessDelete(int id)
+        {
+            FitnessRepo.FitnessDelete(id);
+        }
     }
 }

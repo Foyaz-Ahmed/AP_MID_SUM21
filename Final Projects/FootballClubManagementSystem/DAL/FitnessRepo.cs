@@ -20,5 +20,25 @@ namespace DAL
         
         }
 
+        public static void FitnessEdit(Fitness obj)
+        {
+            var data = context.Fitnesses.FirstOrDefault(e => e.Id == obj.Id);
+            context.Entry(data).CurrentValues.SetValues(obj);
+            context.SaveChanges();
+        }
+
+        public static void FitnessDelete(int id)
+        {
+            var fitness = context.Salaries.FirstOrDefault(e => e.Id == id);
+            context.Salaries.Remove(fitness);
+            context.SaveChanges();
+        }
+
+        public static List<Fitness> GetFitnessDetails()
+        {
+            var data = context.Fitnesses.ToList();
+            return data;
+
+        }
     }
 }

@@ -24,5 +24,19 @@ namespace DAL
             var data = context.Salaries.ToList();
             return data;
         }
+
+        public static void SalaryEdit(Salary obj)
+        {
+            var data = context.Salaries.FirstOrDefault(e => e.Id == obj.Id);
+            context.Entry(data).CurrentValues.SetValues(obj);
+            context.SaveChanges();
+        }
+
+        public static void SalaryDelete(int id)
+        {
+            var salary = context.Salaries.FirstOrDefault(e => e.Id == id);
+            context.Salaries.Remove(salary);
+            context.SaveChanges();
+        }
     }
 }

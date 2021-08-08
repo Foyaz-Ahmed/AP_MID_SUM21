@@ -20,5 +20,25 @@ namespace DAL
             context.SaveChanges();
 
         }
+
+        public static void PerformanceEdit(Performance obj)
+        {
+            var data = context.Performances.FirstOrDefault(e => e.Id == obj.Id);
+            context.Entry(data).CurrentValues.SetValues(obj);
+            context.SaveChanges();
+        }
+
+        public static void PerfromanceDelete(int id)
+        {
+            var performance = context.Performances.FirstOrDefault(e => e.Id == id);
+            context.Performances.Remove(performance);
+            context.SaveChanges();
+        }
+
+        public static List<Performance> GetPerformanceDetails()
+        {
+            var data = context.Performances.ToList();
+            return data;
+        }
     }
 }

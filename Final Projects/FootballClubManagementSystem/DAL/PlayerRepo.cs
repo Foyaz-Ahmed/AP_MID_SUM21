@@ -60,5 +60,35 @@ namespace DAL
              ).ToList();
             return player;
         }
+
+        public static List<Player> GetCF()
+        {
+            var data = context.Players.Where(e => e.Position == "CF").ToList();
+            return data;
+        }
+
+        public static List<Player> GetCMF()
+        {
+            var data = context.Players.Where(e => e.Position == "CMF").ToList();
+            return data;
+        }
+
+        public static List<Player> GetDMF()
+        {
+            var data = context.Players.Where(e => e.Position == "DMF").ToList();
+            return data;
+        }
+
+        public static List<Player> GetCB()
+        {
+            var data = context.Players.Where(e => e.Position == "CB").ToList();
+            return data;
+        }
+
+        public static List<Player> GetGK()
+        {
+            var data = context.Players.Where(e => e.Position == "GK").ToList();
+            return data;
+        }
     }
 }

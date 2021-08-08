@@ -56,5 +56,40 @@ namespace BLL
             var data = AutoMapper.Mapper.Map<List<Player>, List<PlayerModel>>(info);
             
         }
+
+        public static List<PlayerModel> GetCF()
+        {
+            var info = PlayerRepo.GetCF();
+            var data = AutoMapper.Mapper.Map<List<Player>, List<PlayerModel>>(info);
+            return data;
+        }
+
+        public static List<PlayerModel> GetCMF()
+        {
+            var info = PlayerRepo.GetCMF();
+            var data = AutoMapper.Mapper.Map<List<Player>, List<PlayerModel>>(info);
+            return data;
+        }
+
+        public static List<PlayerModel> GetCB()
+        {
+            var info = PlayerRepo.GetCB();
+            var data = AutoMapper.Mapper.Map<List<Player>, List<PlayerModel>>(info);
+            return data;
+        }
+
+        public static List<PlayerModel> GetGK()
+        {
+            var info = PlayerRepo.GetGK();
+            var data = AutoMapper.Mapper.Map<List<Player>, List<PlayerModel>>(info);
+            return data;
+        }
+
+        public static List<PlayerModel> GetDMF()
+        {
+            var info = PlayerRepo.GetDMF();
+            var data = AutoMapper.Mapper.Map<List<Player>, List<PlayerModel>>(info);
+            return data;
+        }
     }
 }

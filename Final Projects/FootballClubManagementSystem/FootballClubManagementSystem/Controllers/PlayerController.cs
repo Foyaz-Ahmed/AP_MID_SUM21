@@ -39,7 +39,7 @@ namespace FootballClubManagementSystem.Controllers
             PlayerService.PlayerEdit(obj);
         }
 
-        [Route("api/Delete/{id}")]
+        [Route("api/Player/Delete/{id}")]
         [HttpGet]
         public void PlayerDelete(int id) {
 
@@ -51,12 +51,51 @@ namespace FootballClubManagementSystem.Controllers
 
             return PlayerService.GetWinger();
         }
+        [Route("api/Player/CF")]
+        [HttpGet]
+        public List<PlayerModel> GetCF()
+        {
+
+            return PlayerService.GetCF();
+        }
+        [Route("api/Player/CMF")]
+        [HttpGet]
+        public List<PlayerModel> GetCMF()
+        {
+
+            return PlayerService.GetCMF();
+        }
+
+        [Route("api/Player/DMF")]
+        [HttpGet]
+        public List<PlayerModel> GetDMF()
+        {
+
+            return PlayerService.GetDMF();
+        }
+
         [Route("api/player/search")]
         [HttpPost]
         public void SearchPlayer(string search_text) {
 
             PlayerService.SearchPlayer(search_text);
         }
+
+        [Route("api/Player/CB")]
+        [HttpGet]
+        public List<PlayerModel> GetCB()
+        {
+
+            return PlayerService.GetCB();
+        }
+        [Route("api/Player/GK")]
+        [HttpGet]
+        public List<PlayerModel> GetGK()
+        {
+
+            return PlayerService.GetGK();
+        }
+
 
     }
 }
