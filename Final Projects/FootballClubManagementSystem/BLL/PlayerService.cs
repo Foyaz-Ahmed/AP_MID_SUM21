@@ -50,10 +50,11 @@ namespace BLL
             return data;
         }
 
-        public static void SearchPlayer(string search_text)
+        public static List<PlayerModel> SearchPlayer(string search_text)
         {
             var info = PlayerRepo.SearchPlayer(search_text);
             var data = AutoMapper.Mapper.Map<List<Player>, List<PlayerModel>>(info);
+            return data;
             
         }
 

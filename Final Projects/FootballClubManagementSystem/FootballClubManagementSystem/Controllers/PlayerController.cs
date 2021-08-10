@@ -74,11 +74,12 @@ namespace FootballClubManagementSystem.Controllers
             return PlayerService.GetDMF();
         }
 
-        [Route("api/player/search")]
+        [Route("api/player/search/{search_text}")]
         [HttpPost]
-        public void SearchPlayer(string search_text) {
+        public List<PlayerModel> SearchPlayer(string search_text) {
 
-            PlayerService.SearchPlayer(search_text);
+            return PlayerService.SearchPlayer(search_text);
+            
         }
 
         [Route("api/Player/CB")]

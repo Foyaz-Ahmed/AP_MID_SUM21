@@ -57,7 +57,7 @@ namespace DAL
         {
             var player = context.Players.ToList();
             player = context.Players.Where(e => e.Name.Contains(search_text) || e.Position.Contains(search_text) 
-             ).ToList();
+            || e.Nationality.Contains(search_text) || e.Age.ToString().Contains(search_text)).ToList();
             return player;
         }
 
