@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" >
+  <head>
+    <!--<base href="/" />-->
+    <meta charset="utf-8">
+    <script src="app/lib/angular.min.js"></script>
+    <link rel="shortcut icon" href=content/css/favicon.ico>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel=stylesheet href=content/css/vendor.css>
+    <link rel=stylesheet href=content/css/style.css>
+    <link rel=stylesheet type=text/css href=content/css/layerslider.css>
+    <script src=content/js/vendor/modernizr.js></script>
+    <link rel="stylesheet" href="content/style.css">
+    <script src="app/lib/angular.route.min.js"></script>
+    <script src="app/app.js"></script>
+
+    <title></title>
+  </head>
+  <body ng-app="myApp">
+    <div ng-include="'views/inc/top_nav.html'"></div>
+      <div ng-include="'views/inc/side_nav.html'"></div>
+    <div ng-view class="new">
+    </div>
+  </body>
+  <script src=content/js/vendor/vendor.js></script>
+  <script src=content/js/main.js></script>
+</html>
+
+<!-- Add Services here -->
+<script src="app/services/ajax.js"></script>
+
+
+<!-- Add Controllers here -->
+<script src="app/controllers/demo.js"></script>
+<script src="app/controllers/player_f.js"></script>
+<script src="app/controllers/admin_playersUpdate.js"></script>
+<script src="app/controllers/admin_playerDetails.js"></script>
+<script src="app/controllers/PlayerCreate.js"></script>
+<script src="app/controllers/admin_playerDelete.js"></script>
+<script src="app/controllers/PlayerSearch.js"></script>
+<script src="app/controllers/physio_f.js"></script>
+<script src="app/controllers/admin_playerGK.js"></script>
+<script src="app/controllers/admin_f.js"></script>
+<script src="app/controllers/coach_f.js"></script>
+<script src="app/controllers/coach_f.js"></script>

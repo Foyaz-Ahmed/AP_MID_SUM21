@@ -1,0 +1,45 @@
+<form>
+ <table class="table table-striped" style="width:600px;">
+  <tr>
+    <td>Name:</td>
+    <td><input type="text" class="form-control" ng-model="p.Name" value="{{p.Name}}"></td>
+  </tr>
+  <tr>
+    <td>UserName:</td>
+    <td><input type="text"  class="form-control" ng-model="p.UserName" value="{{p.UserName}}"></td>
+  </tr>
+  <tr>
+    <td>Nationality:</td>
+    <td><input type="text" class="form-control" ng-model="p.Nationality" value="{{p.Nationality}}"></td>
+  </tr>
+  <tr>
+    <td>Age:</td>
+    <td><input type="number" class="form-control" ng-model="p.Age" value="{{p.Age}}"></td>
+  </tr>
+  <tr>
+    <td>Height:</td>
+    <td><input type="number" class="form-control" ng-model="p.Height" value="{{p.Height}}"></td>
+  </tr>
+  <tr>
+    <td>Weight:</td>
+    <td><input class="form-control" type="number" ng-model="p.Weight" value="{{p.Weight}}"></td>
+  </tr>
+  <tr>
+    <td>Position:</td>
+    <td><input type="text" class="form-control"
+      ng-model="p.Position" value="{{p.Position}}"></td>
+  </tr>
+  <tr>
+    <td>Joining Date:</td>
+    <td><input type="text" class="form-control"
+       ng-model="p.Joining_Date" value="{{p.Joining_Date}}"></td>
+  </tr>
+  <tr>
+    <td>Contact Year:</td>
+    <td><input type="text" class="form-control" ng-model="p.Contract_Year" value="{{p.Contract_Year}}"></td>
+  </tr>
+  <tr>
+    <td><input type="submit" ng-click="UpdatePlayers(p)"  ></td>
+  </tr>
+  </table>
+</form>

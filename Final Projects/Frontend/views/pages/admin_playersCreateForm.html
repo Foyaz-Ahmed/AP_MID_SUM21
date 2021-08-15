@@ -1,0 +1,71 @@
+<form>
+ <table class="table table-striped" style="width:600px;">
+  <tr>
+    <td>Name:</td>
+    <td><input type="text" class="form-control" ng-model="p.Name" value=""></td>
+  </tr>
+  <tr>
+    <td>UserName:</td>
+    <td><input type="text"  class="form-control" ng-model="p.UserName" value=""></td>
+  </tr>
+  <tr>
+    <td>Passowrd:</td>
+    <td><input type="password"  class="form-control" ng-model="p.Password" value=""></td>
+  </tr>
+  <tr>
+    <td>Nationality:</td>
+    <td><input type="text" class="form-control" ng-model="p.Nationality" value=""></td>
+  </tr>
+  <tr>
+    <td>Age:</td>
+    <td><input type="number" class="form-control" ng-model="p.Age" value=""></td>
+  </tr>
+  <tr>
+    <td>Height:</td>
+    <td><input type="number" class="form-control" ng-model="p.Height" value=""></td>
+  </tr>
+  <tr>
+    <td>Weight:</td>
+    <td><input class="form-control" type="number" ng-model="p.Weight" value=""></td>
+  </tr>
+  <tr>
+    <td>Position:</td>
+    <td><input type="text" class="form-control"
+      ng-model="p.Position" value=""></td>
+  </tr>
+  <tr>
+    <td>Joining Date:</td>
+    <td><input type="datetime" class="form-control"
+       ng-model="p.Joining_Date" value=""></td>
+  </tr>
+  <tr>
+    <td>Contact Year:</td>
+    <td><input type="date" class="form-control" ng-model="p.Contract_Year" value=""></td>
+  </tr>
+  <tr>
+    <td>Performance Id:</td>
+    <td>
+      <input type="number" class="form-control" ng-model="p.Performance_Id">
+    </td>
+  </tr>
+  <tr>
+    <td>Salary:</td>
+    <td>
+      <select class="form-control form-control-line" required ng-model="p.Salary_Id">
+							<option disabled selected>Select Salary</option>
+							<option ng-repeat ="s in salary" value={{s.Id}}>{{s.Grade}}</option>
+
+			</select>
+    </td>
+  </tr>
+  <tr>
+    <td>Fitness Id:</td>
+    <td>
+      <input type="number" class="form-control" ng-model="p.Fitness_Id">
+    </td>
+  </tr>
+  <tr>
+    <td><input type="submit" ng-click="AddPlayer(p)"  name="submit" value="Add Player"></td>
+  </tr>
+  </table>
+</form>

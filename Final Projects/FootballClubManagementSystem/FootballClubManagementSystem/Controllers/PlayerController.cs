@@ -75,7 +75,7 @@ namespace FootballClubManagementSystem.Controllers
         }
 
         [Route("api/player/search/{search_text}")]
-        [HttpPost]
+        [HttpGet]
         public List<PlayerModel> SearchPlayer(string search_text) {
 
             return PlayerService.SearchPlayer(search_text);
@@ -96,7 +96,6 @@ namespace FootballClubManagementSystem.Controllers
 
             return PlayerService.GetGK();
         }
-
 
     }
 }
