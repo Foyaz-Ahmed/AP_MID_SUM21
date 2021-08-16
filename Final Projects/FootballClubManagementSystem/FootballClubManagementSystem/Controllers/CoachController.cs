@@ -24,9 +24,16 @@ namespace FootballClubManagementSystem.Controllers
         {
             return CoachService.GetCoach();
         }
+
+        [Route("api/Coach/{id}")]
+        [HttpGet]
+        public CoachInfoModel GetCoach(int id)
+        {
+            return CoachService.GetCoach(id);
+        }
         [Route("api/CoachEdit/{id}")]
         [HttpPost]
-        public void CoachEdit(CoachModel obj)
+        public void CoachEdit(CoachInfoModel obj)
         {
             CoachService.CoachEdit(obj);
         }

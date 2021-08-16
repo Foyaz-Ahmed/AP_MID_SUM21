@@ -29,8 +29,8 @@ namespace DAL
 
         public static void FitnessDelete(int id)
         {
-            var fitness = context.Salaries.FirstOrDefault(e => e.Id == id);
-            context.Salaries.Remove(fitness);
+            var fitness = context.Fitnesses.FirstOrDefault(e => e.Id == id);
+            context.Fitnesses.Remove(fitness);
             context.SaveChanges();
         }
 
@@ -39,6 +39,12 @@ namespace DAL
             var data = context.Fitnesses.ToList();
             return data;
 
+        }
+
+        public static Fitness GetFitness(int id)
+        {
+            var data = context.Fitnesses.FirstOrDefault(e => e.Id == id);
+            return data;
         }
     }
 }

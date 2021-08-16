@@ -1,0 +1,32 @@
+<form>
+ <table class="table table-striped" style="width:600px;">
+  <tr>
+    <td>Name:</td>
+    <td><input type="text" class="form-control" ng-model="p.Name" value="{{p.Name}}"></td>
+  </tr>
+  <tr>
+    <td>UserName:</td>
+    <td><input type="text"  class="form-control" ng-model="p.UserName" value="{{p.UserName}}"></td>
+  </tr>
+  <!-- <tr>
+    <td>Passowrd:</td>
+    <td><input type="password"  class="form-control" ng-model="p.Password" value="{{p.Passowrd}}"></td>
+  </tr> -->
+  <tr>
+    <td>Nationality:</td>
+    <td><input type="text" class="form-control" ng-model="p.Nationality" value="{{p.Nationality}}"></td>
+  </tr>
+  <tr>
+    <td>Age:</td>
+    <td><input type="number" class="form-control" ng-model="p.Age" value="{{p.Age}}"></td>
+  </tr>
+  <tr>
+    <td>Salary:</td>
+    <td>
+      <input type="text" class="form-control" ng-model="p.Salary_Id" value="{{p.Salary_Id}}"></td>
+  </tr>
+  <tr>
+    <td><input type="submit" ng-click="UpdateCoach(p)"  name="submit" value="Update Coach"></td>
+  </tr>
+  </table>
+</form>

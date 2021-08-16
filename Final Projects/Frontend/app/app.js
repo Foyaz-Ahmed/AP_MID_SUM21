@@ -14,10 +14,6 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         controller: 'player_f'
     })
 
-    .when("/coach_f", {
-        templateUrl : "views/pages/coach.html",
-        controller: 'coach_f'
-    })
     .when("/physio_f", {
         templateUrl : "views/pages/physio.html",
         controller: 'physio_f'
@@ -38,19 +34,21 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         controller: 'admin_registration'
     })
 
+    .when("/coach_f", {
+        templateUrl : "views/pages/coach.html",
+        controller: 'coach_f'
+    })
+
     .when("/admin_coachCreate", {
         templateUrl : "views/pages/admin_coachCreateForm.html",
         controller: 'admin_coachCreate'
     })
-    .when("/admin_coachRead", {
-        templateUrl : "views/pages/coach.html",
-          controller: 'admin_coachRead'
-    })
-    .when("/admin_coachUpdate", {
-        templateUrl : "views/pages/admin_coachCreateForm.html",
+
+    .when("/admin_coachUpdate:id", {
+        templateUrl : "views/pages/admin_coachUpdateForm.html",
           controller: 'admin_coachUpdate'
     })
-    .when("/admin_coachDelete", {
+    .when("/admin_coachDelete:id", {
         templateUrl : "views/pages/coach.html",
           controller: 'admin_coachDelete'
     })
@@ -65,12 +63,12 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/fixtures.html",
           controller: 'admin_fixtureRead'
     })
-    .when("/admin_fixtureDelete", {
+    .when("/admin_fixtureDelete:id", {
         templateUrl : "views/pages/fixtures.html",
           controller: 'admin_fixtureDelete'
     })
-    .when("/admin_fixtureUpdate", {
-        templateUrl : "views/pages/admin_fixtureCreateForm.html",
+    .when("/admin_fixtureUpdate:id", {
+        templateUrl : "views/pages/admin_fixtureUpdate.html",
           controller: 'admin_fixtureUpdate'
     })
 
@@ -103,6 +101,29 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
           controller: 'admin_playerGK'
     })
 
+    .when("/SearchCF", {
+          templateUrl : "views/pages/admin_playerCF.html",
+          controller: 'admin_playerCF'
+    })
+
+    .when("/SearchWingers", {
+          templateUrl : "views/pages/admin_playerWingers.html",
+          controller: 'admin_playerWingers'
+    })
+
+    .when("/SearchCMF", {
+          templateUrl : "views/pages/admin_playerCMF.html",
+          controller: 'admin_playerCMF'
+    })
+    .when("/SearchDMF", {
+          templateUrl : "views/pages/admin_playerDMF.html",
+          controller: 'admin_playerDMF'
+    })
+    .when("/SearchCB", {
+          templateUrl : "views/pages/admin_playerCB.html",
+          controller: 'admin_playerCB'
+    })
+
     .when("/admin_physioCreate", {
         templateUrl : "views/pages/admin_physioCreateForm.html",
         controller: 'admin_physioCreate'
@@ -129,13 +150,32 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/salary.html",
           controller: 'admin_salaryRead'
     })
-    .when("/admin_salaryUpdate", {
-        templateUrl : "views/pages/admin_salaryCreateForm.html",
+    .when("/admin_salaryUpdate:id", {
+        templateUrl : "views/pages/admin_salaryUpdateForm.html",
           controller: 'admin_salaryUpdate'
     })
-    .when("/admin_salaryDelete", {
+    .when("/admin_salaryDelete:id", {
         templateUrl : "views/pages/salary.html",
           controller: 'admin_salaryDelete'
+    })
+
+    .when("/PerformanceRead", {
+        templateUrl : "views/pages/performance.html",
+          controller: 'admin_performanceRead'
+    })
+
+    .when("/admin_PerformanceCreate", {
+        templateUrl : "views/pages/admin_PerformanceCreateForm.html",
+        controller: 'admin_PerformanceCreate'
+    })
+
+    .when("/admin_PerformanceUpdate:id", {
+        templateUrl : "views/pages/admin_PerformanceUpdateForm.html",
+          controller: 'admin_performanceUpdate'
+    })
+    .when("/admin_PerformanceDelete:id", {
+        templateUrl : "views/pages/performance.html",
+          controller: 'admin_PerformanceDelete'
     })
 
     .when("/coach_formationCreate", {
@@ -163,11 +203,11 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/fitness.html",
           controller: 'physio_fitnessRead'
     })
-    .when("/physio_fitnessUpdate", {
-        templateUrl : "views/pages/physio_fitnessCreateForm.html",
+    .when("/physio_fitnessUpdate:id", {
+        templateUrl : "views/pages/physio_fitnessUpdateForm.html",
           controller: 'physio_fitnessUpdate'
     })
-    .when("/physio_fitnessDelete", {
+    .when("/physio_fitnessDelete:id", {
         templateUrl : "views/pages/fitness.html",
           controller: 'physio_fitnessDelete'
     })
@@ -194,9 +234,6 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/physio_loginInfo.html",
         controller: 'physio_editPassword'
     })
-
-
-
 
     .otherwise({
         redirectTo:"/"

@@ -1,0 +1,19 @@
+<form>
+ <table class="table table-striped" style="width:600px;">
+  <tr>
+    <td>Fitness status:</td>
+    <td>
+      <select class="form-control form-control-line" required ng-model="p.Status">
+							<option disabled selected>Select Fitness</option>
+              <option  value="Fit">Fit</option>
+              <option  value="Injured">Injured</option>
+							<option  value="Rested">Rested</option>
+
+			</select>
+    </td>
+  </tr>
+  <tr>
+    <td><input type="submit" ng-click="AddFitness(p)"  name="submit" value="Add Fitness"></td>
+  </tr>
+  </table>
+</form>

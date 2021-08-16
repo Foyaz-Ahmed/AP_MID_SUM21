@@ -40,5 +40,11 @@ namespace DAL
             context.Fixtures.Remove(fixture);
             context.SaveChanges();
         }
+
+        public static Fixture GetFixtures(int id)
+        {
+            var data = context.Fixtures.FirstOrDefault(e => e.Id == id);
+            return data;
+        }
     }
 }

@@ -30,9 +30,16 @@ namespace BLL
             PerformanceRepo.PerformanceEdit(data);
         }
 
-        public static void PerfromanceDelete(int id)
+        public static PerformanceModel GetPerformance(int id)
         {
-            PerformanceRepo.PerfromanceDelete(id);
+            var data = PerformanceRepo.GetPerformance(id);
+            var p = AutoMapper.Mapper.Map<Performance, PerformanceModel>(data);
+            return p;
+        }
+
+        public static void PerformanceDelete(int id)
+        {
+            PerformanceRepo.PerformanceDelete(id);
         }
 
         public static List<PerformanceDetailsModel> GetPerformanceDetails()

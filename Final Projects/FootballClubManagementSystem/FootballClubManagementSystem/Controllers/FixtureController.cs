@@ -25,6 +25,13 @@ namespace FootballClubManagementSystem.Controllers
             return FixtureService.GetFixture();
         }
 
+        [Route("api/Fixture/{id}")]
+        [HttpGet]
+        public FixtureModel GetFixtures(int id)
+        {
+            return FixtureService.GetFixtures(id);
+        }
+
 
         [Route("api/Fixture/Edit/{id}")]
         [HttpPost]

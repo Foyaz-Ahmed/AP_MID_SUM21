@@ -25,6 +25,14 @@ namespace FootballClubManagementSystem.Controllers
 
             PerformanceService.AddPerformance(model);
         }
+
+        [Route("api/Performance/{id}")]
+        [HttpGet]
+        public PerformanceModel GetPerformance(int id)
+        {
+            return PerformanceService.GetPerformance(id);
+        }
+
         [Route("api/PerformanceEdit/{id}")]
         [HttpPost]
         public void PerformanceEdit(EditPerformanceModel obj)
@@ -32,12 +40,12 @@ namespace FootballClubManagementSystem.Controllers
             PerformanceService.PerformanceEdit(obj);
         }
 
-        [Route("api/Perfromance/Delete/{id}")]
+        [Route("api/Performance/Delete/{id}")]
         [HttpGet]
-        public void PerfromanceDelete(int id)
+        public void PerformanceDelete(int id)
         {
 
-            PerformanceService.PerfromanceDelete(id);
+            PerformanceService.PerformanceDelete(id);
         }
 
         [Route("api/Performance/Details")]

@@ -28,7 +28,7 @@ namespace DAL
             context.SaveChanges();
         }
 
-        public static void PerfromanceDelete(int id)
+        public static void PerformanceDelete(int id)
         {
             var performance = context.Performances.FirstOrDefault(e => e.Id == id);
             context.Performances.Remove(performance);
@@ -38,6 +38,12 @@ namespace DAL
         public static List<Performance> GetPerformanceDetails()
         {
             var data = context.Performances.ToList();
+            return data;
+        }
+
+        public static Performance GetPerformance(int id)
+        {
+            var data = context.Performances.FirstOrDefault(e => e.Id == id);
             return data;
         }
     }

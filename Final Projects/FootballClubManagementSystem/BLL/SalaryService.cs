@@ -29,6 +29,13 @@ namespace BLL
             SalaryRepo.SalaryEdit(data);
         }
 
+        public static SalaryModel GetSalary(int id)
+        {
+            var data = SalaryRepo.GetSalary(id);
+            var p = AutoMapper.Mapper.Map<Salary, SalaryModel>(data);
+            return p;
+        }
+
         public static void SalaryDelete(int id)
         {
             SalaryRepo.SalaryDelete(id);

@@ -30,8 +30,19 @@
   </tr>
   <tr>
     <td>Position:</td>
-    <td><input type="text" class="form-control"
-      ng-model="p.Position" value=""></td>
+     <td>
+       <select class="form-control form-control-line" required ng-model="p.Position">
+         <option disabled selected>Select Position</option>
+          <option value="CB">CB</option>
+          <option value="CMF">CMF</option>
+          <option value="DMF">DMF</option>
+          <option value="CF">CF</option>
+          <option value="GK">GK</option>
+          <option value="Winger">Winger</option>
+        </select>
+    <!-- <td><input type="text" class="form-control"
+      ng-model="p.Position" value=""> -->
+    </td>
   </tr>
   <tr>
     <td>Joining Date:</td>

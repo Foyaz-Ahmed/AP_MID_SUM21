@@ -1,0 +1,61 @@
+<form>
+ <table class="table table-striped" style="width:600px;">
+  <tr>
+    <td>Average Rating:</td>
+    <td><input type="number" class="form-control" ng-model="p.Avg_Rating" value=""></td>
+  </tr>
+  <tr>
+    <td>Goals:</td>
+    <td><input type="number"  class="form-control" ng-model="p.Goals" value=""></td>
+  </tr>
+  <tr>
+    <td>Assists:</td>
+    <td><input type="number"  class="form-control" ng-model="p.Assists" value=""></td>
+  </tr>
+  <tr>
+    <td>Accurate Pass:</td>
+    <td><input type="number" class="form-control" ng-model="p.Accurate_Pass" value=""></td>
+  </tr>
+  <tr>
+    <td>Key Pass:</td>
+    <td><input type="number" class="form-control" ng-model="p.Key_Pass" value=""></td>
+  </tr>
+  <tr>
+    <td>Interception:</td>
+    <td><input type="number" class="form-control" ng-model="p.Interception" value=""></td>
+  </tr>
+  <tr>
+    <td>Successfully Tackled:</td>
+    <td><input class="form-control" type="number" ng-model="p.Successfully_Tackled" value=""></td>
+  </tr>
+  <tr>
+    <td>Chance Create:</td>
+    <td><input type="number" class="form-control"
+       ng-model="p.Chance_Create" value=""></td>
+  </tr>
+  <tr>
+    <td>Dribbles Completed:</td>
+    <td><input type="number" class="form-control" ng-model="p.Dribbles_Completed" value=""></td>
+  </tr>
+  <tr>
+    <td>Saves:</td>
+    <td>
+      <input type="number" class="form-control" ng-model="p.Saves">
+    </td>
+  </tr>
+  <tr>
+    <td>Red Cards:</td>
+    <td>
+      <input type="number" class="form-control" ng-model="p.Red_Cards"
+    </td>
+  </tr>
+  <tr>
+    <td>Yellow Cards:</td>
+    <td>
+      <input type="number" class="form-control" ng-model="p.Yellow_Cards"</td>
+  </tr>
+  <tr>
+    <td><input type="submit" ng-click="AddPerformance(p)"  name="submit" value="Add Performance"></td>
+  </tr>
+  </table>
+</form>

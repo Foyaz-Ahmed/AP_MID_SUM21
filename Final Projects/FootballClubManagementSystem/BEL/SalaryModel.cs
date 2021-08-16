@@ -8,5 +8,10 @@ namespace BEL
 {
     public class SalaryModel
     {
+        public int Id { get; set; }
+        public double Amount { get; set; }
+        public string Grade { get; set; }
+        public double Bonus { get; set; }
+        public string Status { get; set; }
     }
 }

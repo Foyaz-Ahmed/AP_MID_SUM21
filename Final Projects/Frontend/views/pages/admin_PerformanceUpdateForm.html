@@ -1,0 +1,61 @@
+<form>
+ <table class="table table-striped" style="width:600px;">
+  <tr>
+    <td>Average Rating:</td>
+    <td><input type="number" class="form-control" ng-model="p.Avg_Rating" value="{{p.Avg_Rating}}"></td>
+  </tr>
+  <tr>
+    <td>Goals:</td>
+    <td><input type="number"  class="form-control" ng-model="p.Goals" value="{{p.Goals}}"></td>
+  </tr>
+  <tr>
+    <td>Assists:</td>
+    <td><input type="number"  class="form-control" ng-model="p.Assists" value="{{p.Assists}}"></td>
+  </tr>
+  <tr>
+    <td>Accurate Pass:</td>
+    <td><input type="number" class="form-control" ng-model="p.Accurate_Pass" value="{{p.Accurate_Pass}}"></td>
+  </tr>
+  <tr>
+    <td>Key Pass:</td>
+    <td><input type="number" class="form-control" ng-model="p.Key_Pass" value="{{p.Key_Pass}}"></td>
+  </tr>
+  <tr>
+    <td>Interception:</td>
+    <td><input type="number" class="form-control" ng-model="p.Interception" value="{{p.Interception}}"></td>
+  </tr>
+  <tr>
+    <td>Successfully Tackled:</td>
+    <td><input class="form-control" type="number" ng-model="p.Successfully_Tackled" value="{{p.Successfully_Tackled}}"></td>
+  </tr>
+  <tr>
+    <td>Chance Create:</td>
+    <td><input type="number" class="form-control"
+       ng-model="p.Chance_Create" value="{{p.Chance_Create}}"></td>
+  </tr>
+  <tr>
+    <td>Dribbles Completed:</td>
+    <td><input type="number" class="form-control" ng-model="p.Dribbles_Completed" value="{{p.Dribbles_Completed}}"></td>
+  </tr>
+  <tr>
+    <td>Saves:</td>
+    <td>
+      <input type="number" class="form-control" ng-model="p.Saves" value="{{p.Saves}}">
+    </td>
+  </tr>
+  <tr>
+    <td>Red Cards:</td>
+    <td>
+      <input type="number" class="form-control" ng-model="p.Red_Cards" value="{{p.Red_Cards}}">
+    </td>
+  </tr>
+  <tr>
+    <td>Yellow Cards:</td>
+    <td>
+      <input type="number" class="form-control" ng-model="p.Yellow_Cards" value="{{p.Yellow_Cards}}"></td>
+  </tr>
+  <tr>
+    <td><input type="submit" ng-click="UpdatePerformance(p)"  name="submit" value="Update Performance"></td>
+  </tr>
+  </table>
+</form>

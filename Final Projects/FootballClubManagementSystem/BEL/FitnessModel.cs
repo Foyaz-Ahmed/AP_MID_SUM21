@@ -8,5 +8,7 @@ namespace BEL
 {
     public class FitnessModel
     {
+        public int Id { get; set; }
+        public string Status { get; set; }
     }
 }

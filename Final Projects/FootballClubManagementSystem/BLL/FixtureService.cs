@@ -28,6 +28,14 @@ namespace BLL
             var data = AutoMapper.Mapper.Map<FixtureModel, Fixture>(obj);
             FixtureRepo.FixtureEdit(data);
         }
+
+        public static FixtureModel GetFixtures(int id)
+        {
+            var data = FixtureRepo.GetFixtures(id);
+            var p = AutoMapper.Mapper.Map<Fixture, FixtureModel>(data);
+            return p;
+        }
+
         public static void FixtureDelete(int id)
         {
             FixtureRepo.FixtureDelete(id);

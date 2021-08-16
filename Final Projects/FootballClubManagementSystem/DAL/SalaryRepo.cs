@@ -38,5 +38,11 @@ namespace DAL
             context.Salaries.Remove(salary);
             context.SaveChanges();
         }
+
+        public static Salary GetSalary(int id)
+        {
+            var data = context.Salaries.FirstOrDefault(e => e.Id == id);
+            return data;
+        }
     }
 }

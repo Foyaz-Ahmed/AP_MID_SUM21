@@ -24,10 +24,17 @@ namespace BLL
             return data;
         }
 
-        public static void CoachEdit(CoachModel obj)
+        public static void CoachEdit(CoachInfoModel obj)
         {
-            var data = AutoMapper.Mapper.Map<CoachModel, Coach>(obj);
+            var data = AutoMapper.Mapper.Map<CoachInfoModel, Coach>(obj);
             CoachRepo.CoachEdit(data);
+        }
+
+        public static CoachInfoModel GetCoach(int id)
+        {
+            var data = CoachRepo.GetCoach(id);
+            var p = AutoMapper.Mapper.Map<Coach, CoachInfoModel>(data);
+            return p;
         }
 
         public static void CoachDelete(int id)

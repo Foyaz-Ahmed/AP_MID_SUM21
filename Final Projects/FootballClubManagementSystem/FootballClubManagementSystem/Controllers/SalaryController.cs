@@ -24,6 +24,14 @@ namespace FootballClubManagementSystem.Controllers
             return SalaryService.GetSalaryDetails();
         
         }
+
+        [Route("api/Salary/{id}")]
+        [HttpGet]
+        public SalaryModel GetSalary(int id)
+        {
+            return SalaryService.GetSalary(id);
+        }
+
         [Route("api/Salary/Edit/{id}")]
         [HttpPost]
         public void SalaryEdit(EditSalaryModel obj)

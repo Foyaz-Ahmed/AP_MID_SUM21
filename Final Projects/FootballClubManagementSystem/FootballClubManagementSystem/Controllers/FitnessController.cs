@@ -17,6 +17,7 @@ namespace FootballClubManagementSystem.Controllers
 
             return FitnessService.GetFitnessDetails();
         }
+
         [Route("api/Fitness/Add")]
         [HttpPost]
         public void AddFitness(AddFitnessModel model)
@@ -24,6 +25,14 @@ namespace FootballClubManagementSystem.Controllers
 
             FitnessService.AddFitness(model);
         }
+
+        [Route("api/Fitness/{id}")]
+        [HttpGet]
+        public FitnessModel GetFitness(int id)
+        {
+            return FitnessService.GetFitness(id);
+        }
+
         [Route("api/FitnessEdit/{id}")]
         [HttpPost]
         public void FitnessEdit(EditFitnessModel obj)

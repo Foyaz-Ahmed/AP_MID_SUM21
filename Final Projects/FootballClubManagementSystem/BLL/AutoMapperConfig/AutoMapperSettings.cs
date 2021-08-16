@@ -43,6 +43,8 @@ namespace BLL.AutoMapperConfig
             CreateMap<Formation, FormationModel>();
             CreateMap<Physio, PhysioInfoModel>();
             CreateMap<Coach, CoachInfoModel>();
+            CreateMap<CoachInfoModel, Coach>();
+            CreateMap<Coach, CoachModel>();
 
         }
     }

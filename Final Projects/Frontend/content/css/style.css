@@ -1,9 +1,9 @@
 /*
-Name:  
+Name:
 Author :
-Repo :  
+Repo :
 Version : 0.1
-SHA-1 :  
+SHA-1 :
 
 
 _________________________________
@@ -2738,10 +2738,10 @@ select[multiple].input-lg, .input-group-lg > select[multiple].form-control,
 
 @media (min-width: 768px) {
 .match_versus-wrap {
-    
+
     margin-left: 396px;
-    
-   
+
+
 }
 .match_versus-wrap {
     padding: 0;
@@ -11406,3 +11406,12 @@ ul.slick-dots {
     .mail-cart button:hover {
       color: #63aa3d;
       background: white; }
+
+      .my-custom-scrollbar {
+        position: relative;
+        height: 200px;
+        overflow: auto;
+        }
+        .table-wrapper-scroll-y {
+        display: block;
+        }

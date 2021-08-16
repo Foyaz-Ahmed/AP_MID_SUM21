@@ -39,5 +39,11 @@ namespace DAL
             context.Coaches.Remove(coach);
             context.SaveChanges();
         }
+
+        public static Coach GetCoach(int id)
+        {
+            var data = context.Coaches.FirstOrDefault(e => e.Id == id);
+            return data;
+        }
     }
 }

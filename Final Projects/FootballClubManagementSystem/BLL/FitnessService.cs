@@ -30,7 +30,13 @@ namespace BLL
             var info = AutoMapper.Mapper.Map<List<Fitness>, List<FitnessDetailsModel>>(data);
             return info;
         }
-        
+
+        public static FitnessModel GetFitness(int id)
+        {
+            var data = FitnessRepo.GetFitness(id);
+            var p = AutoMapper.Mapper.Map<Fitness, FitnessModel>(data);
+            return p;
+        }
 
         public static void FitnessDelete(int id)
         {

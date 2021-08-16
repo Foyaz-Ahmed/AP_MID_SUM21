@@ -1,0 +1,27 @@
+<form>
+ <table class="table table-striped" style="width:600px;">
+  <tr>
+    <td>Opponent:</td>
+    <td><input type="text" class="form-control" ng-model="p.Opponent" value="{{p.Opponent}}"></td>
+  </tr>
+  <tr>
+    <td>Match Status:</td>
+    <td><input type="text"  class="form-control" ng-model="p.Match_Status" value="{{p.Match_Status}}"></td>
+  </tr>
+  <tr>
+    <td>Ground Name</td>
+    <td><input type="text"  class="form-control" ng-model="p.Ground_Name" value="{{p.Ground_Name}}"></td>
+  </tr>
+  <tr>
+    <td>Match Date:</td>
+    <td><input type="datetime" class="form-control" ng-model="p.Date" value="{{p.Date}}"></td>
+  </tr>
+  <tr>
+    <td>Result:</td>
+    <td><input type="text" class="form-control" ng-model="p.Result" value="{{p.Result}}"></td>
+  </tr>
+  <tr>
+    <td><input type="submit" ng-click="UpdateFixture(p)"  name="submit" value="Update Fixture"></td>
+  </tr>
+  </table>
+</form>
