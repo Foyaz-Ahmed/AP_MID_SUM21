@@ -1,0 +1,20 @@
+<form>
+ <table class="table table-striped" style="width:600px;">
+  <tr>
+    <td>Name:</td>
+    <td><input type="text" class="form-control" ng-model="p.Name" value=""></td>
+  </tr>
+  <tr>
+    <td>Type:</td>
+     <td>
+         <select class="form-control form-control-line" required ng-model="p.Type">
+   							<option disabled selected>Select Salary</option>
+   							<option ng-repeat ="s in type" >{{s.Type}}</option>
+   			</select>
+    </td>
+  </tr>
+  <tr>
+    <td><input type="submit" ng-click="AddFormation(p)"  name="submit" value="Add Formation"></td>
+  </tr>
+  </table>
+</form>

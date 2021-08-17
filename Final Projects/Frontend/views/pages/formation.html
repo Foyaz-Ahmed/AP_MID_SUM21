@@ -1,0 +1,26 @@
+<form class="form-control">
+  <!-- <input type="text" ng-model="s.search" class="form-control" style="width:400px;margin-top:500px;">
+  <a href="#!admin_playerSearch{{s.search}}" -->
+<table style="" class="table table-dark table-striped">
+    <tr align="center">
+     <td>Id</td>
+     <td>Name</td>
+     <td>Type</td>
+     <td>Action</td>
+    </tr>
+    <tr align="center" ng-repeat="p in formation track by $index">
+      <td>{{p.Id}}</td>
+      <td>{{p.Name}}</td>
+      <td>{{p.Type}}</td>
+      <td><a href="#!/coach_formationUpdate{{p.Id}}" style="background:green;border:1px solid;width:100px;height:20px;padding:10px;border-align:center;border-radius:10px;color:white;">Edit</a>
+          <a href="#!/coach_formationDelete{{p.Id}}" style="background:#D0152E;border:1px solid;width:100px;padding:10px;border-align:center;border-radius:10px;color:white;">Delete</a>
+          <a href ="#!/admin_playerDetails{{p.Id}}" style="background:blue;border:1px solid;width:100px;padding:10px;border-align:center;border-radius:10px;color:white;">Details</a>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="#!coach_formationCreate" class="btn btn-primary">Add Formation</a></td>
+    </tr>
+  </table>
+
+</form>
+<br><br>

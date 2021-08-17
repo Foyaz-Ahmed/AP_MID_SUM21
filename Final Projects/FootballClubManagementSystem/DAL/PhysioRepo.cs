@@ -40,6 +40,12 @@ namespace DAL
             context.SaveChanges();
         }
 
+        public static Physio GetPhysioInfo(int id)
+        {
+            var data = context.Physios.FirstOrDefault(e => e.Id == id);
+            return data;
+        }
+
         public static List<Physio> GetPhysioDetails()
         {
             var data = context.Physios.ToList();

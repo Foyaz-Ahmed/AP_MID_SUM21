@@ -45,6 +45,7 @@ namespace BLL.AutoMapperConfig
             CreateMap<Coach, CoachInfoModel>();
             CreateMap<CoachInfoModel, Coach>();
             CreateMap<Coach, CoachModel>();
+            CreateMap<Formation, FormationModel>();
 
         }
     }

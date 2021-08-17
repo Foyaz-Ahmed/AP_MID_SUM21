@@ -1,0 +1,28 @@
+<form>
+ <table class="table table-striped" style="width:600px;">
+  <tr>
+    <td>Name:</td>
+    <td><input type="text" class="form-control" ng-model="p.Name" value="{{p.Name}}"></td>
+  </tr>
+  <tr>
+    <td>UserName:</td>
+    <td><input type="text"  class="form-control" ng-model="p.UserName" value="{{p.UserName}}""></td>
+  </tr>
+  <tr>
+    <td>Degree:</td>
+    <td><input type="text" class="form-control" ng-model="p.Degree" value="{{p.Degree}}"></td>
+  </tr>
+  <tr>
+    <td>Major</td>
+    <td><input type="text" class="form-control" ng-model="p.Major" value="{{p.Major}}"></td>
+  </tr>
+    <tr>
+      <td>Salary:</td>
+      <td>
+        <input type="text" class="form-control" ng-model="p.Salary_Id" value="{{p.Salary_Id}}"></td>
+    </tr>
+  <tr>
+    <td><input type="submit" ng-click="UpdatePhysio(p)"  name="submit" value="Update Physio"></td>
+  </tr>
+  </table>
+</form>

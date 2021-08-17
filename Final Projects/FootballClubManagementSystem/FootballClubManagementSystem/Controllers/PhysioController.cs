@@ -20,10 +20,18 @@ namespace FootballClubManagementSystem.Controllers
         }
         [Route("api/Physio")]
         [HttpGet]
-        public List<PhysioModel> GetPhysio()
+        public List<PhysioInfoModel> GetPhysio()
         {
             return PhysioService.GetPhysio();
         }
+
+        [Route("api/Physio/{id}")]
+        [HttpGet]
+        public PhysioInfoModel GetPhysioInfo(int id)
+        {
+            return PhysioService.GetPhysioInfo(id);
+        }
+
         [Route("api/Physio/Edit/{id}")]
         [HttpPost]
         public void PhysioEdit(PhysioModel obj)

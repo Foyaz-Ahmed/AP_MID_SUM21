@@ -16,10 +16,10 @@ namespace BLL
             PhysioRepo.AddPhysio(data);
         }
 
-        public static List<PhysioModel> GetPhysio()
+        public static List<PhysioInfoModel> GetPhysio()
         {
             var info = PhysioRepo.GetPhysio();
-            var data = AutoMapper.Mapper.Map<List<Physio>, List<PhysioModel>>(info);
+            var data = AutoMapper.Mapper.Map<List<Physio>, List<PhysioInfoModel>>(info);
             return data;
         }
 
@@ -27,6 +27,13 @@ namespace BLL
         {
             var data = AutoMapper.Mapper.Map<PhysioModel, Physio>(obj);
             PhysioRepo.PhysioEdit(data);
+        }
+
+        public static PhysioInfoModel GetPhysioInfo(int id)
+        {
+            var data = PhysioRepo.GetPhysioInfo(id);
+            var p = AutoMapper.Mapper.Map<Physio, PhysioInfoModel>(data);
+            return p;
         }
 
         public static void PhysioDelete(int id)

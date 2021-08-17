@@ -38,5 +38,11 @@ namespace DAL
             context.Formations.Remove(formation);
             context.SaveChanges();
         }
+
+        public static Formation GetFormationDetails(int id)
+        {
+            var data = context.Formations.FirstOrDefault(e => e.Id == id);
+            return data;
+        }
     }
 }

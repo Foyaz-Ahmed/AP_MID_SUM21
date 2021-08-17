@@ -29,6 +29,13 @@ namespace BLL
             FormationRepo.FormationEdit(data);
         }
 
+        public static FormationModel GetFormationDetails(int id)
+        {
+            var info = FormationRepo.GetFormationDetails(id);
+            var data = AutoMapper.Mapper.Map<Formation, FormationModel>(info);
+            return data;
+        }
+
         public static void FormationDelete(int id)
         {
             FormationRepo.FormationDelete(id);

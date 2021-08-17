@@ -132,12 +132,12 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/physio.html",
           controller: 'admin_physioRead'
     })
-    .when("/admin_physioDelete", {
+    .when("/admin_physioDelete:id", {
         templateUrl : "views/pages/physio.html",
           controller: 'admin_physioDelete'
     })
-    .when("/admin_physioUpdate", {
-        templateUrl : "views/pages/admin_physioCreateForm.html",
+    .when("/admin_physioUpdate:id", {
+        templateUrl : "views/pages/admin_physioUpdate.html",
           controller: 'admin_physioUpdate'
     })
 
@@ -186,11 +186,11 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/formation.html",
           controller: 'coach_formationRead'
     })
-    .when("/coach_formationUpdate", {
-        templateUrl : "views/pages/coach_formationCreateForm.html",
+    .when("/coach_formationUpdate:id", {
+        templateUrl : "views/pages/coach_formationUpdateForm.html",
           controller: 'coach_formationUpdate'
     })
-    .when("/coach_formationDelete", {
+    .when("/coach_formationDelete:id", {
         templateUrl : "views/pages/formation.html",
           controller: 'coach_formationDelete'
     })
