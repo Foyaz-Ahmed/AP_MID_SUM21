@@ -27,6 +27,13 @@ namespace DAL
             context.SaveChanges();
         }
 
+        public static string getName(int id)
+        {
+            // var data = context.Players.Select(e => e.Name).AsEnumerable().Where( e=> e.Id == id);
+            var data = context.Players.Where(z => z.Fitness_Id == id).Select(x => x.Name).FirstOrDefault();
+            return data;
+        }
+
         public static void FitnessDelete(int id)
         {
             var fitness = context.Fitnesses.FirstOrDefault(e => e.Id == id);

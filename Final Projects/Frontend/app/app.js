@@ -173,6 +173,11 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/admin_PerformanceUpdateForm.html",
           controller: 'admin_performanceUpdate'
     })
+    .when("/admin_PerformanceDetails:id", {
+        templateUrl : "views/pages/performanceDetails.html",
+          controller: 'admin_PerformanceDetails'
+    })
+
     .when("/admin_PerformanceDelete:id", {
         templateUrl : "views/pages/performance.html",
           controller: 'admin_PerformanceDelete'

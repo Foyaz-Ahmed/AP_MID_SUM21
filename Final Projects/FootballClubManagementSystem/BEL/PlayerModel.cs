@@ -23,7 +23,7 @@ namespace BEL
         public int Salary_Id { get; set; }
         public int Fitness_Id { get; set; }
         public int PerformanceGoals { get; set; }
-        public string SalaryStatus { get; set; }
+        public string SalaryGrade { get; set; }
         public string FitnessStatus { get; set; }
 
     }

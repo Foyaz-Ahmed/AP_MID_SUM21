@@ -26,9 +26,25 @@ namespace BLL
 
         public static List<FitnessDetailsModel> GetFitnessDetails()
         {
-            var data = FitnessRepo.GetFitnessDetails();
-            var info = AutoMapper.Mapper.Map<List<Fitness>, List<FitnessDetailsModel>>(data);
-            return info;
+             //    var data = FitnessRepo.GetFitnessDetails();
+            //     var info = AutoMapper.Mapper.Map<List<Fitness>, List<FitnessDetailsModel>>(data);
+                // return info;
+
+           var fitness_details = FitnessRepo.GetFitnessDetails();
+            List<FitnessDetailsModel> data = new List<FitnessDetailsModel>();
+
+            foreach (var d in fitness_details)
+            {
+                var dm = new FitnessDetailsModel()
+                {
+                    Id = d.Id,
+                    Status = d.Status,
+                    PlayerName = FitnessRepo.getName(d.Id)
+            };
+                
+                data.Add(dm);
+            }
+            return data;
         }
 
         public static FitnessModel GetFitness(int id)

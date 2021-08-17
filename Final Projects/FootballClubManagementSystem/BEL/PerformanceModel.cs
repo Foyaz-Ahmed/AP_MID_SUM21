@@ -21,5 +21,7 @@ namespace BEL
         public int Saves { get; set; }
         public int Red_Cards { get; set; }
         public int Yellow_Cards { get; set; }
+        public ICollection<PlayerInfoModel> Players { get; set; }
+      
     }
 }

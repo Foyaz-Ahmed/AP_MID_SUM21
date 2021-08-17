@@ -39,6 +39,12 @@ namespace FootballClubManagementSystem.Controllers
         {
             PerformanceService.PerformanceEdit(obj);
         }
+        [Route("api/Performance/Details/{id}")]
+        [HttpGet]
+        public PerformanceDetailsModel GetPerformanceIndividual(int id)
+        {
+            return PerformanceService.GetPerformanceIndividual(id);
+        }
 
         [Route("api/Performance/Delete/{id}")]
         [HttpGet]

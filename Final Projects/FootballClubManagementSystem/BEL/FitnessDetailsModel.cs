@@ -10,6 +10,6 @@ namespace BEL
     {
         public int Id { get; set; }
         public string Status { get; set; }
-        public ICollection<PlayerInfoModel> Players{ get; set; }
+        public string PlayerName { get; set; }
     }
 }

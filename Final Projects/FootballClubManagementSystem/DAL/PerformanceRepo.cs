@@ -46,5 +46,17 @@ namespace DAL
             var data = context.Performances.FirstOrDefault(e => e.Id == id);
             return data;
         }
+        public static string getName(int id)
+        {
+
+            var data = context.Players.Where(z => z.Performance_Id == id).Select(x => x.Name).FirstOrDefault();
+            return data;
+        }
+
+        public static Performance GetPerformanceIndividual(int id)
+        {
+            var data = context.Performances.FirstOrDefault(e => e.Id == id);
+            return data;
+        }
     }
 }
