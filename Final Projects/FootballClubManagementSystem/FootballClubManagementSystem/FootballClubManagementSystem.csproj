@@ -106,6 +106,7 @@
     <Compile Include="Controllers\FitnessController.cs" />
     <Compile Include="Controllers\FixtureController.cs" />
     <Compile Include="Controllers\FormationController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PerformanceController.cs" />
     <Compile Include="Controllers\PhysioController.cs" />
     <Compile Include="Controllers\PlayerController.cs" />

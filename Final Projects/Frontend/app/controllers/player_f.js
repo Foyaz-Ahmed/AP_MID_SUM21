@@ -4,6 +4,6 @@ app.controller("player_f",function($scope,$http,ajax){
       $scope.players=response.data;
     }
     function error(error){
-      
+
     }
 });

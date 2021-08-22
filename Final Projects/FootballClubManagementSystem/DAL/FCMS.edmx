@@ -5,13 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="FCMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Admin">
+        <EntityType Name="ClubAdmin">
           <Key>
-            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Coaches">
           <Key>
@@ -51,12 +51,16 @@
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FCMS.dbo.LogIn' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="LogIn">
           <Key>
-            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Password" />
           </Key>
-          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="int" />
         </EntityType>
         <EntityType Name="Performances">
           <Key>
@@ -116,16 +120,6 @@
           <Property Name="Grade" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="Bonus" Type="float" Nullable="false" />
           <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_Coaches_Salaries">
           <End Role="Salaries" Type="Self.Salaries" Multiplicity="1" />
@@ -188,17 +182,22 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="FCMSModelStoreContainer">
-          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClubAdmin" EntityType="Self.ClubAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Coaches" EntityType="Self.Coaches" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fitness" EntityType="Self.Fitness" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fixtures" EntityType="Self.Fixtures" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Formations" EntityType="Self.Formations" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="LogIn" EntityType="Self.LogIn" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Performances" EntityType="Self.Performances" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Physios" EntityType="Self.Physios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Salaries" EntityType="Self.Salaries" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogIn" EntityType="Self.LogIn" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LogIn].[Id] AS [Id], 
+    [LogIn].[Password] AS [Password], 
+    [LogIn].[Type] AS [Type]
+    FROM [dbo].[LogIn] AS [LogIn]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Coaches_Salaries" Association="Self.FK_Coaches_Salaries">
             <End Role="Salaries" EntitySet="Salaries" />
             <End Role="Coaches" EntitySet="Coaches" />
@@ -225,13 +224,13 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FCMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Admin">
+        <EntityType Name="ClubAdmin">
           <Key>
-            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Coach">
           <Key>
@@ -272,13 +271,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
-        <EntityType Name="LogIn">
-          <Key>
-            <PropertyRef Name="UserName" />
-          </Key>
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Performance">
           <Key>
@@ -347,15 +339,14 @@
           <NavigationProperty Name="Physios" Relationship="Self.FK_Physios_Salaries" FromRole="Salaries" ToRole="Physios" />
           <NavigationProperty Name="Players" Relationship="Self.FK_Players_Salaries" FromRole="Salaries" ToRole="Players" />
         </EntityType>
-        <EntityType Name="sysdiagram">
+        <EntityType Name="LogIn">
           <Key>
-            <PropertyRef Name="diagram_id" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Password" />
           </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="Int32" />
         </EntityType>
         <Association Name="FK_Coaches_Salaries">
           <End Role="Salaries" Type="Self.Salary" Multiplicity="1" />
@@ -418,17 +409,16 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="FCMSEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="ClubAdmins" EntityType="Self.ClubAdmin" />
           <EntitySet Name="Coaches" EntityType="Self.Coach" />
           <EntitySet Name="Fitnesses" EntityType="Self.Fitness" />
           <EntitySet Name="Fixtures" EntityType="Self.Fixture" />
           <EntitySet Name="Formations" EntityType="Self.Formation" />
-          <EntitySet Name="LogIns" EntityType="Self.LogIn" />
           <EntitySet Name="Performances" EntityType="Self.Performance" />
           <EntitySet Name="Physios" EntityType="Self.Physio" />
           <EntitySet Name="Players" EntityType="Self.Player" />
           <EntitySet Name="Salaries" EntityType="Self.Salary" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="LogIns" EntityType="Self.LogIn" />
           <AssociationSet Name="FK_Coaches_Salaries" Association="Self.FK_Coaches_Salaries">
             <End Role="Salaries" EntitySet="Salaries" />
             <End Role="Coaches" EntitySet="Coaches" />
@@ -456,12 +446,12 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="FCMSModelStoreContainer" CdmEntityContainer="FCMSEntities">
-          <EntitySetMapping Name="Admins">
-            <EntityTypeMapping TypeName="FCMSModel.Admin">
-              <MappingFragment StoreEntitySet="Admin">
+          <EntitySetMapping Name="ClubAdmins">
+            <EntityTypeMapping TypeName="FCMSModel.ClubAdmin">
+              <MappingFragment StoreEntitySet="ClubAdmin">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -504,14 +494,6 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LogIns">
-            <EntityTypeMapping TypeName="FCMSModel.LogIn">
-              <MappingFragment StoreEntitySet="LogIn">
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -578,14 +560,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="FCMSModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
+          <EntitySetMapping Name="LogIns">
+            <EntityTypeMapping TypeName="FCMSModel.LogIn">
+              <MappingFragment StoreEntitySet="LogIn">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

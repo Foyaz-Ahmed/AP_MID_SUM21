@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="FCMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Admin">
+  <EntityType Name="ClubAdmin">
     <Key>
-      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Id" />
     </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Coaches">
     <Key>
@@ -46,12 +46,16 @@
     <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FCMS.dbo.LogIn' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="LogIn">
     <Key>
-      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Password" />
     </Key>
-    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="int" />
   </EntityType>
   <EntityType Name="Performances">
     <Key>
@@ -111,16 +115,6 @@
     <Property Name="Grade" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="Bonus" Type="float" Nullable="false" />
     <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK_Coaches_Salaries">
     <End Role="Salaries" Type="Self.Salaries" Multiplicity="1" />
@@ -183,17 +177,22 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="FCMSModelStoreContainer">
-    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClubAdmin" EntityType="Self.ClubAdmin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Coaches" EntityType="Self.Coaches" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Fitness" EntityType="Self.Fitness" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Fixtures" EntityType="Self.Fixtures" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Formations" EntityType="Self.Formations" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LogIn" EntityType="Self.LogIn" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Performances" EntityType="Self.Performances" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Physios" EntityType="Self.Physios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Salaries" EntityType="Self.Salaries" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogIn" EntityType="Self.LogIn" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [LogIn].[Id] AS [Id], 
+    [LogIn].[Password] AS [Password], 
+    [LogIn].[Type] AS [Type]
+    FROM [dbo].[LogIn] AS [LogIn]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_Coaches_Salaries" Association="Self.FK_Coaches_Salaries">
       <End Role="Salaries" EntitySet="Salaries" />
       <End Role="Coaches" EntitySet="Coaches" />

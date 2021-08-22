@@ -1,32 +1,27 @@
-<form class="form-control">
-  <!-- <input type="text" ng-model="s.search" class="form-control" style="width:400px;margin-top:500px;">
-  <a href="#!admin_playerSearch{{s.search}}" -->
-<table style="" class="table table-dark table-striped">
-    <tr align="center">
-     <td>Id</td>
-     <td>Opponent</td>
-     <td>Match Status</td>
-     <td>Ground Name</td>
-     <td>Match Date</td>
-     <td>Result</td>
-     <td>Action</td>
-    </tr>
-    <tr align="center" ng-repeat="p in fixture track by $index">
-      <td>{{p.Id}}</td>
-      <td>{{p.Opponent}}</td>
-      <td>{{p.Match_Status}}</td>
-      <td>{{p.Ground_Name}}</td>
-      <td>{{p.Date}}</td>
-      <td>{{p.Result}}</td>
-      <td><a href="#!/admin_fixtureUpdate{{p.Id}}" style="background:green;border:1px solid;width:100px;height:20px;padding:10px;border-align:center;border-radius:10px;color:white;">Edit</a>
-          <a href="#!/admin_fixtureDelete{{p.Id}}" style="background:#D0152E;border:1px solid;width:100px;padding:10px;border-align:center;border-radius:10px;color:white;">Delete</a>
-          <a href ="#!/admin_playerDetails{{p.Id}}" style="background:blue;border:1px solid;width:100px;padding:10px;border-align:center;border-radius:10px;color:white;">Details</a>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="#!admin_fixtureCreate" class="btn btn-primary">Add Fixture</a></td>
-    </tr>
-  </table>
+<a href="#!/physioDashboard" class="btn btn-success">Back</a>
+<aside class=contentinner>
+  <ul class=ticketInfo>
+    <li class=clearfix>
+      <div class=subPoint_table>
+        <div style="margin-left: -160px" class="headline01 smallpoint">MATCH NO.</div>
+        <div class="headline01 largepoint">MATCH DETAILS</div>
+        <div class="headline01 smallpoint row row"><span>#</span><span></span></div>
+      </div>
+    </li>
+      <li ng-repeat="f in fixture">
+          <ul class="t_info headline01 clearfix">
+              <li>{{f.Id}}</li>
+              <li>
+                  <div class="headline01 clearfix"><span>Our Team</span><span
+                          class=vs>vs</span> <span>{{f.Opponent}}</span></div>
+                  <div class="ticketInner_info paragraph02 clearfix"><span>{{f.Date}}</span>
+                      <span>18.25pm</span> <span class=capitalize01>{{f.Result}}</span>
+                  </div>
+              </li>
+              <li><a href=# class="btn-small01 btn-green">book tickets</a></li>
+          </ul>
+      </li>
 
-</form>
-<br><br>
+  </ul>
+
+  </aside>

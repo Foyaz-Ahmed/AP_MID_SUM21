@@ -14,7 +14,8 @@ namespace DAL
     
     public partial class LogIn
     {
-        public string UserName { get; set; }
+        public int Id { get; set; }
         public string Password { get; set; }
+        public Nullable<int> Type { get; set; }
     }
 }

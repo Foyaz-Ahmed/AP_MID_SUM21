@@ -50,6 +50,7 @@
     <Compile Include="FitnessService.cs" />
     <Compile Include="FixtureService.cs" />
     <Compile Include="FormationService.cs" />
+    <Compile Include="LoginService.cs" />
     <Compile Include="PerformanceService.cs" />
     <Compile Include="PhysioService.cs" />
     <Compile Include="PlayerService.cs" />

@@ -2,7 +2,7 @@ app.controller("PlayerCreate",function($scope,ajax,$location){
 
     ajax.get("https://localhost:44368/api/Salary/Details",
     function(resp){
-      $scope.salary = resp.data;
+      $scope.Salary = resp.data;
 
     },
 
@@ -14,7 +14,7 @@ app.controller("PlayerCreate",function($scope,ajax,$location){
        //$scope.Name
        ajax.post("https://localhost:44368/api/Player/Add",p,
        function(resp){
-           $location.path("/player_f");
+           $location.path("/player_f2");
        },
        function(err){});
 

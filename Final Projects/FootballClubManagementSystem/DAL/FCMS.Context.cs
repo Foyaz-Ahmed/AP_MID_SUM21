@@ -25,16 +25,15 @@ namespace DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Admin> Admins { get; set; }
+        public virtual DbSet<ClubAdmin> ClubAdmins { get; set; }
         public virtual DbSet<Coach> Coaches { get; set; }
         public virtual DbSet<Fitness> Fitnesses { get; set; }
         public virtual DbSet<Fixture> Fixtures { get; set; }
         public virtual DbSet<Formation> Formations { get; set; }
-        public virtual DbSet<LogIn> LogIns { get; set; }
         public virtual DbSet<Performance> Performances { get; set; }
         public virtual DbSet<Physio> Physios { get; set; }
         public virtual DbSet<Player> Players { get; set; }
         public virtual DbSet<Salary> Salaries { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<LogIn> LogIns { get; set; }
     }
 }

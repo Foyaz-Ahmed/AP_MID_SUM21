@@ -53,7 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs">
+    <Compile Include="ClubAdmin.cs">
       <DependentUpon>FCMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Coach.cs">
@@ -90,6 +90,7 @@
     <Compile Include="LogIn.cs">
       <DependentUpon>FCMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="LoginRepo.cs" />
     <Compile Include="Performance.cs">
       <DependentUpon>FCMS.tt</DependentUpon>
     </Compile>
@@ -107,9 +108,6 @@
       <DependentUpon>FCMS.tt</DependentUpon>
     </Compile>
     <Compile Include="SalaryRepo.cs" />
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>FCMS.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

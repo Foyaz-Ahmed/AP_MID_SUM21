@@ -1,33 +1,33 @@
-<form class="form-control">
-  <!-- <input type="text" ng-model="s.search" class="form-control" style="width:400px;margin-top:500px;">
-  <a href="#!admin_playerSearch{{s.search}}" -->
-<table style="" class="table table-dark table-striped">
-    <tr align="center">
-     <td>Id</td>
-     <td>Name</td>
-     <td>Username</td>
-     <td>Degree</td>
-     <td>Major</td>
-     <td>SalaryAmount</td>
-     <td>Salary Grade</td>
-     <td>Action</td>
-    </tr>
-    <tr align="center" ng-repeat="p in coach track by $index">
-      <td>{{p.Id}}</td>
-      <td>{{p.Name}}</td>
-      <td>{{p.UserName}}</td>
-      <td>{{p.Degree}}</td>
-      <td>{{p.Major}}</td>
-      <td>{{p.SalaryAmount}}</td>
-      <td>{{p.SalaryGrade}}</td>
-      <td><a href="#!/admin_physioUpdate{{p.Id}}" style="background:green;border:1px solid;width:100px;height:20px;padding:10px;border-align:center;border-radius:10px;color:white;">Edit</a>
-          <a href="#!/admin_physioDelete{{p.Id}}" style="background:#D0152E;border:1px solid;width:100px;padding:10px;border-align:center;border-radius:10px;color:white;">Delete</a>
-          <a href ="#!/admin_playerDetails{{p.Id}}" style="background:blue;border:1px solid;width:100px;padding:10px;border-align:center;border-radius:10px;color:white;">Details</a>
-      </td>
-    </tr>
-    <tr>
-      <td><a href="#!admin_physioCreate" class="btn btn-primary">Add Physio</a></td>
-    </tr>
-  </table>
+<div class="matchSchedule_details row">
+  <div class=match_next >
+    <div class="wrap_match_next right-triangle">
+      <div class=right-padding>
+        <h4 class=headline03>ALL PHYSIOS</h4>
 
-</form>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <button type="button" name="button" class="btn btn-success">GO TO PHYSIO DASHBOARD</button>
+      </div>
+    </div>
+  </div>
+  <div class=match_versus-wrap style="margin-top:-400px;margin-left: 297px">
+    <div class=wrap_match-innerdetails>
+      <ul class="point_table scrollable">
+        <li class=clearfix>
+          <div class=subPoint_table>
+            <div class="headline01 smallpoint">Name</div>
+            <div class="headline01 largepoint">Major</div>
+            <div class="headline01 smallpoint row row"><span>DEGREES</span><span></span></div>
+          </div>
+        </li>
+        <li ng-repeat="p in physio" class=clearfix>
+          <div class=subPoint_table>
+            <div class="headline01 smallpoint">{{p.Id}}</div>
+            <div class="headline01 largepoint">{{p.Name}}</div>
+            <div class="headline01 smallpoint row row"><span></span><span>{{p.Major}}</span></div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>

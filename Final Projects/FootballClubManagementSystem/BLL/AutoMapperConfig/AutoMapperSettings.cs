@@ -18,6 +18,7 @@ namespace BLL.AutoMapperConfig
             CreateMap<AddPlayerModel, Player>();
             CreateMap<PlayerModel, Fitness>();
             CreateMap<PlayerModel, Salary>();
+            CreateMap<Salary, SalaryInfoModel>();
             CreateMap<PlayerModel, Performance>();
             CreateMap<AddSalaryModel, Salary>();
             CreateMap<AddPerformanceModel, Performance>();
@@ -46,6 +47,7 @@ namespace BLL.AutoMapperConfig
             CreateMap<CoachInfoModel, Coach>();
             CreateMap<Coach, CoachModel>();
             CreateMap<Formation, FormationModel>();
+            CreateMap<LogInModel, LogIn>();
 
         }
     }
