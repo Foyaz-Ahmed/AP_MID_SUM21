@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.D_Name)
         </th>
         <th></th>
     </tr>
@@ -20,7 +20,7 @@
 @foreach (var item in Model) {
 <tr>
     <td>
-        @Html.DisplayFor(modelItem => item.Name)
+        @Html.DisplayFor(modelItem => item.D_Name)
     </td>
     <td>
         <a href="/Department/Edit/@item.ID" class="btn btn-primary">Update</a>

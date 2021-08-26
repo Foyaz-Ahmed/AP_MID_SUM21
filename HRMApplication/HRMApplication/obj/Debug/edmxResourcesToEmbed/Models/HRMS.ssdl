@@ -5,7 +5,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="C_Name" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Url" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Departments">
@@ -13,14 +13,14 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="D_Name" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Designations">
     <Key>
       <PropertyRef Name="desig_ID" />
     </Key>
     <Property Name="desig_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Ds_Name" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="Employees">
     <Key>
@@ -38,16 +38,6 @@
     <Property Name="Comp_ID" Type="int" Nullable="false" />
     <Property Name="Desig_ID" Type="int" Nullable="false" />
     <Property Name="Status" Type="varchar" MaxLength="20" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK_Employees_Companies">
     <End Role="Companies" Type="Self.Companies" Multiplicity="1" />
@@ -90,7 +80,6 @@
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Designations" EntityType="Self.Designations" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Employees_Companies" Association="Self.FK_Employees_Companies">
       <End Role="Companies" EntitySet="Companies" />
       <End Role="Employees" EntitySet="Employees" />

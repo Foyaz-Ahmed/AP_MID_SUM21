@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "MarketingDepartment";
+}
+
+<h2>EmployeeInformations</h2>
+<a href="/Employee/ITDepartment" class="btn btn-default">IT Department</a>
+<a href="/Employee/MarketingDepartment" class="btn btn-default">Marketing Department</a>
+<a href="/Employee/SellsDepartment" class="btn btn-default">Sells Department</a>
+<table class="table table-condensed">
+    <tr>
+        <th>ID</th>
+        <th> @Html.ActionLink("Name", "EmployeeInformations", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "Name" })</th>
+        <th>@Html.ActionLink("CompanyName", "EmployeeInformations", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "CompanyName" })</th>
+        <th>@Html.ActionLink("DepartmentName", "EmployeeInformations", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "DepartmentName" })</th>
+        <th>@Html.ActionLink("DesignationName", "EmployeeInformations", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "DesignationName" })</th>
+        <th>@Html.ActionLink("Age", "EmployeeInformations", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "Age" })</th>
+        <th>@Html.ActionLink("Salary", "EmployeeInformations", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "Salary" })</th>
+        <th>@Html.ActionLink("JoiningDate", "EmployeeInformations", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "JoiningDate" })</th>
+    </tr>
+    @foreach (var info in Model.details)
+    {
+        <tr>
+            <td>@info.Id</td>
+            <td>@info.Name</td>
+            <td>@info.CompanyName</td>
+            <td>@info.DepartmentName</td>
+            <td>@info.DesignationName</td>
+            <td>@info.Age</td>
+            <td>@info.Salary</td>
+            <td>@info.JoiningDate</td>
+        </tr>
+    }
+
+</table>
+
+

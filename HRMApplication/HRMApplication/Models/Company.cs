@@ -20,13 +20,13 @@ namespace HRMApplication.Models
         {
             this.Employees = new HashSet<Employee>();
         }
-
-        
+    
         public int ID { get; set; }
+
         [Required]
         [RegularExpression(@"^([\sA-Za-z]+)$", ErrorMessage = "Please Enter Valid Company Name")]
-        public string Name { get; set; }
-        
+        public string C_Name { get; set; }
+
         [Required]
         [Url]
         public string Url { get; set; }

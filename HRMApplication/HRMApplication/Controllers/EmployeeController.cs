@@ -117,6 +117,8 @@ namespace HRMApplication.Controllers
             //var employeesIfno = context.Employees.ToList();
             //return View(employeesIfno);
         }
+
+        
         public ActionResult Create()
         {
             return View();
@@ -136,7 +138,7 @@ namespace HRMApplication.Controllers
 
         }
 
-        
+
         public ActionResult Edit(int Id)
         {
 
@@ -175,5 +177,337 @@ namespace HRMApplication.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult EmployeeInformations(string sortOrder, string sortBy)
+        {
+
+
+            ViewBag.sortOrder = sortOrder;
+            EmployeeDetails empDepartment = new EmployeeDetails();
+            empDepartment.details = (from employee in context.Employees
+                                     join department in context.Departments
+                                     on employee.Dept_ID equals department.ID
+                                     join designation in context.Designations
+                                     on employee.Dept_ID equals designation.desig_ID
+                                     join company in context.Companies
+                                     on employee.Comp_ID equals company.ID
+                                     where (employee.Status == "Active")
+                                     select new EmployeeDetails()
+                                     {
+                                         Id = employee.ID,
+                                         Name = employee.Name,
+                                         CompanyName = company.C_Name,
+                                         DepartmentName = department.D_Name,
+                                         DesignationName = designation.Ds_Name,
+                                         Age = employee.Age,
+                                         Salary = employee.Salary,
+                                         JoiningDate = employee.JoiningDate
+                                     }).ToList();
+
+            switch (sortBy)
+            {
+                case "Name":
+                    {
+                        switch (sortOrder)
+                        {
+                            case "Asc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.Name).ToList();
+                                    break;
+                                }
+                            case "Desc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderByDescending(e => e.Name).ToList();
+                                    break;
+                                }
+                            default:
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.Name).ToList();
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+
+                case "Age":
+                    {
+                        switch (sortOrder)
+                        {
+                            case "Asc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.Age).ToList();
+                                    break;
+                                }
+                            case "Desc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderByDescending(e => e.Age).ToList();
+                                    break;
+                                }
+                            default:
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.Age).ToList();
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "JoiningDate":
+                    {
+                        switch (sortOrder)
+                        {
+                            case "Asc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.JoiningDate).ToList();
+                                    break;
+                                }
+                            case "Desc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderByDescending(e => e.JoiningDate).ToList();
+                                    break;
+                                }
+                            default:
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.Age).ToList();
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "Salary":
+                    {
+                        switch (sortOrder)
+                        {
+                            case "Asc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.Salary).ToList();
+                                    break;
+                                }
+                            case "Desc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderByDescending(e => e.Salary).ToList();
+                                    break;
+                                }
+                            default:
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.Salary).ToList();
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "DesignationName":
+                    {
+                        switch (sortOrder)
+                        {
+                            case "Asc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.DesignationName).ToList();
+                                    break;
+                                }
+                            case "Desc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderByDescending(e => e.DesignationName).ToList();
+                                    break;
+                                }
+                            default:
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.DesignationName).ToList();
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "DepartmentName":
+                    {
+                        switch (sortOrder)
+                        {
+                            case "Asc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.DepartmentName).ToList();
+                                    break;
+                                }
+                            case "Desc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderByDescending(e => e.DepartmentName).ToList();
+                                    break;
+                                }
+                            default:
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.DepartmentName).ToList();
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "CompanyName":
+                    {
+                        switch (sortOrder)
+                        {
+                            case "Asc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.CompanyName).ToList();
+                                    break;
+                                }
+                            case "Desc":
+                                {
+                                    empDepartment.details = empDepartment.details.OrderByDescending(e => e.CompanyName).ToList();
+                                    break;
+                                }
+                            default:
+                                {
+                                    empDepartment.details = empDepartment.details.OrderBy(e => e.CompanyName).ToList();
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                default:
+                    {
+                        empDepartment.details = empDepartment.details.OrderBy(e => e.Name).ToList();
+                        break;
+                    }
+            }
+
+
+            return View(empDepartment);
+        }
+
+        public ActionResult ITDepartment()
+        {
+
+            EmployeeDetails empDepartment = new EmployeeDetails();
+            empDepartment.details = (from employee in context.Employees
+                                     join department in context.Departments
+                                     on employee.Dept_ID equals department.ID
+                                     join designation in context.Designations
+                                     on employee.Dept_ID equals designation.desig_ID
+                                     join company in context.Companies
+                                     on employee.Comp_ID equals company.ID
+                                     where (department.D_Name == "IT")
+                                     select new EmployeeDetails()
+                                     {
+                                         Id = employee.ID,
+                                         Name = employee.Name,
+                                         CompanyName = company.C_Name,
+                                         DepartmentName = department.D_Name,
+                                         DesignationName = designation.Ds_Name,
+                                         Age = employee.Age,
+                                         Salary = employee.Salary,
+                                         JoiningDate = employee.JoiningDate
+                                     }).ToList();
+            return View(empDepartment);
+
+        }
+
+        public ActionResult MarketingDepartment()
+        {
+
+            EmployeeDetails empDepartment = new EmployeeDetails();
+            empDepartment.details = (from employee in context.Employees
+                                     join department in context.Departments
+                                     on employee.Dept_ID equals department.ID
+                                     join designation in context.Designations
+                                     on employee.Dept_ID equals designation.desig_ID
+                                     join company in context.Companies
+                                     on employee.Comp_ID equals company.ID
+                                     where (department.D_Name == "Marketing")
+                                     select new EmployeeDetails()
+                                     {
+                                         Id = employee.ID,
+                                         Name = employee.Name,
+                                         CompanyName = company.C_Name,
+                                         DepartmentName = department.D_Name,
+                                         DesignationName = designation.Ds_Name,
+                                         Age = employee.Age,
+                                         Salary = employee.Salary,
+                                         JoiningDate = employee.JoiningDate
+                                     }).ToList();
+            return View(empDepartment);
+
+        }
+
+        public ActionResult SellsDepartment()
+        {
+
+            EmployeeDetails empDepartment = new EmployeeDetails();
+            empDepartment.details = (from employee in context.Employees
+                                     join department in context.Departments
+                                     on employee.Dept_ID equals department.ID
+                                     join designation in context.Designations
+                                     on employee.Dept_ID equals designation.desig_ID
+                                     join company in context.Companies
+                                     on employee.Comp_ID equals company.ID
+                                     where (department.D_Name == "Sells")
+                                     select new EmployeeDetails()
+                                     {
+                                         Id = employee.ID,
+                                         Name = employee.Name,
+                                         CompanyName = company.C_Name,
+                                         DepartmentName = department.D_Name,
+                                         DesignationName = designation.Ds_Name,
+                                         Age = employee.Age,
+                                         Salary = employee.Salary,
+                                         JoiningDate = employee.JoiningDate
+                                     }).ToList();
+            return View(empDepartment);
+
+        }
+
+        [HttpPost]
+        public ActionResult EmployeeInformations(string Name)
+        {
+            EmployeeDetails empDepartment = new EmployeeDetails();
+            empDepartment.details = (from employee in context.Employees
+                                     join department in context.Departments
+                                     on employee.Dept_ID equals department.ID
+                                     join designation in context.Designations
+                                     on employee.Dept_ID equals designation.desig_ID
+                                     join company in context.Companies
+                                     on employee.Comp_ID equals company.ID
+                                     where (employee.Status == "Active")
+                                     select new EmployeeDetails()
+                                     {
+                                         Id = employee.ID,
+                                         Name = employee.Name,
+                                         CompanyName = company.C_Name,
+                                         DepartmentName = department.D_Name,
+                                         DesignationName = designation.Ds_Name,
+                                         Age = employee.Age,
+                                         Salary = employee.Salary,
+                                         JoiningDate = employee.JoiningDate
+                                     }).ToList();
+            if (Name != null)
+            {
+
+            
+                empDepartment.details = (from employee in context.Employees
+                                         join department in context.Departments
+                                         on employee.Dept_ID equals department.ID
+                                         join designation in context.Designations
+                                         on employee.Dept_ID equals designation.desig_ID
+                                         join company in context.Companies
+                                         on employee.Comp_ID equals company.ID
+                                         where (employee.Status == "Active")
+                                         where (employee.Name.Contains(Name) || department.D_Name.Contains(Name) ||
+                                         designation.Ds_Name.Contains(Name) || company.C_Name.Contains(Name))
+                                         select new EmployeeDetails()
+                                         {
+                                             Id = employee.ID,
+                                             Name = employee.Name,
+                                             CompanyName = company.C_Name,
+                                             DepartmentName = department.D_Name,
+                                             DesignationName = designation.Ds_Name,
+                                             Age = employee.Age,
+                                             Salary = employee.Salary,
+                                             JoiningDate = employee.JoiningDate
+                                         }).ToList();
+
+
+            }
+
+            return View(empDepartment);
+
+        }
     }
+
 }

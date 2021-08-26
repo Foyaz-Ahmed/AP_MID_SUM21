@@ -53,6 +53,10 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -149,6 +153,7 @@
     <Compile Include="Models\Employee.cs">
       <DependentUpon>HRMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EmployeeDetails.cs" />
     <Compile Include="Models\HRMS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -164,9 +169,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HRMS.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>HRMS.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\JoiningDateValidation.cs" />
     <Compile Include="Models\ValidateBirthDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -244,6 +247,10 @@
     <Content Include="Views\Designation\Edit.cshtml" />
     <Content Include="Views\Designation\Details.cshtml" />
     <Content Include="Views\Designation\Delete.cshtml" />
+    <Content Include="Views\Employee\EmployeeInformations.cshtml" />
+    <Content Include="Views\Employee\ITDepartment.cshtml" />
+    <Content Include="Views\Employee\SellsDepartment.cshtml" />
+    <Content Include="Views\Employee\MarketingDepartment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -22,9 +22,10 @@ namespace HRMApplication.Models
         }
     
         public int desig_ID { get; set; }
+
         [Required]
         [RegularExpression(@"^([\sA-Za-z]+)$", ErrorMessage = "Please Enter Valid Designation Name")]
-        public string Name { get; set; }
+        public string Ds_Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }
