@@ -53,41 +53,43 @@
 @foreach (var item in Model) {
 <tr>
     <td>
-        @Html.DisplayFor(modelItem => item.Name)
+        <hr /> @Html.DisplayFor(modelItem => item.Name)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Email)
+        <hr /> @Html.DisplayFor(modelItem => item.Email)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Gender)
+        <hr /> @Html.DisplayFor(modelItem => item.Gender)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Age)
+        <hr /> @Html.DisplayFor(modelItem => item.Age)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Salary)
+        <hr /> @Html.DisplayFor(modelItem => item.Salary)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.JoiningDate)
+        <hr />@Html.DisplayFor(modelItem => item.JoiningDate)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.DOB)
+        <hr /> @Html.DisplayFor(modelItem => item.DOB)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Dept_ID)
+        <hr />@Html.DisplayFor(modelItem => item.Dept_ID)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Comp_ID)
+        <hr /> @Html.DisplayFor(modelItem => item.Comp_ID)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Desig_ID)
+        <hr /> @Html.DisplayFor(modelItem => item.Desig_ID)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Status)
+        <hr /> @Html.DisplayFor(modelItem => item.Status)
     </td>
     <td>
         <a href="/Employee/Edit/@item.ID" class="btn btn-primary">Update</a>
+      <hr />
         <a href="/Employee/Details/@item.ID" class="btn btn-warning">Details</a>
+        <hr />
         <a href="/Employee/Delete/@item.ID" class="btn btn-danger">Delete</a>
     </td>
  

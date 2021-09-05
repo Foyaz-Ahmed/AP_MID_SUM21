@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace HRMApplication.Controllers
 {
+    [Authorize]
     public class DepartmentController : Controller
     {
         // GET: Deparmnt
@@ -22,6 +23,11 @@ namespace HRMApplication.Controllers
         {
             return View();
 
+        }
+
+        public JsonResult isDepartmentValidaiton(string D_Name)
+        {
+            return Json(data: !context.Departments.Any(x => x.D_Name == D_Name), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

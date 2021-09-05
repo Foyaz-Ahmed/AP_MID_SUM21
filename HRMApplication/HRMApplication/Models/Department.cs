@@ -12,6 +12,7 @@ namespace HRMApplication.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     public partial class Department
     {
@@ -24,6 +25,7 @@ namespace HRMApplication.Models
         public int ID { get; set; }
 
         [Required]
+        [Remote(action: "isDepartmentValidaiton", controller: "Department", ErrorMessage = "Department already exists")]
         [RegularExpression(@"^([A-Za-z]+)$", ErrorMessage = "Please Enter Valid Department Name")]
         public string D_Name { get; set; }
         

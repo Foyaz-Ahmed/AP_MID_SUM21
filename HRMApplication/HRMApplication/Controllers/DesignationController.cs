@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace HRMApplication.Controllers
 {
+    [Authorize]
     public class DesignationController : Controller
     {
         // GET: Designation

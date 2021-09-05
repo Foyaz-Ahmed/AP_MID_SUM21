@@ -12,6 +12,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.C_Name)
         </th>
         <th>
@@ -21,19 +24,22 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.C_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Url)
-        </td>
-        <td>
-            <a href="/Company/Edit/@item.ID" class="btn btn-primary">Update</a>
-            <a href="/Company/Details/@item.ID" class="btn btn-warning">Details</a>
-            <a href="/Company/Delete/@item.ID" class="btn btn-danger">Delete</a>
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.C_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Url)
+    </td>
+    <td>
+        <a href="/Company/Edit/@item.ID" class="btn btn-primary">Update</a>
+        <a href="/Company/Details/@item.ID" class="btn btn-warning">Details</a>
+        <a href="/Company/Delete/@item.ID" class="btn btn-danger">Delete</a>
+    </td>
+</tr>
 }
 
 </table>

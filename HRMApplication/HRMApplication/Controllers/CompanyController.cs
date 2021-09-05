@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace HRMApplication.Controllers
 {
+    [Authorize]
     public class CompanyController : Controller
     {
         // GET: Company
@@ -34,6 +35,14 @@ namespace HRMApplication.Controllers
             }
             return View();
 
+        }
+        public JsonResult isCompanyNameValidaiton(string C_Name)
+        {
+            return Json(data: !context.Companies.Any(x => x.C_Name == C_Name), JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult isCompanyUrlValidaiton(string Url)
+        {
+            return Json(data: !context.Companies.Any(x => x.Url == Url), JsonRequestBehavior.AllowGet);
         }
         public ActionResult Edit(int Id)
         {

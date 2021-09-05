@@ -4,17 +4,19 @@ namespace HRMApplication.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     public partial class Employee
     {
         public int ID { get; set; }
         [Required]
-        [RegularExpression(@"^([\sA-Za-z]+)$", ErrorMessage = "Please Enter Valid Name")]
+        [RegularExpression(@"^[a-zA-Z\s\.]+$", ErrorMessage = "Please Enter Valid Name")]
         [StringLength(20, ErrorMessage = "Name length can't be more than 20.")]
         public string Name { get; set; }
 
         [Required]
         [EmailAddress(ErrorMessage = "Please Enter Valid Email")]
+        [Remote(action: "isCompanyEmailValidaiton", controller: "Employee", ErrorMessage = "Email already exists")]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Please Enter Valid Email")]
         public string Email { get; set; }
 

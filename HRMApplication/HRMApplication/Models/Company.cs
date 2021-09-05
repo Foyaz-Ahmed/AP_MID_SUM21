@@ -12,6 +12,7 @@ namespace HRMApplication.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     public partial class Company
     {
@@ -24,10 +25,12 @@ namespace HRMApplication.Models
         public int ID { get; set; }
 
         [Required]
-        [RegularExpression(@"^([\sA-Za-z]+)$", ErrorMessage = "Please Enter Valid Company Name")]
+        [Remote(action: "isCompanyNameValidaiton", controller:"Company", ErrorMessage= "Company Name already exists")]
+        [RegularExpression(@"^[a-zA-Z\s\.]+$", ErrorMessage = "Please Enter Valid Company Name")]
         public string C_Name { get; set; }
 
         [Required]
+        [Remote(action: "isCompanyUrlValidaiton", controller: "Company", ErrorMessage = "Company Url already exists")]
         [Url]
         public string Url { get; set; }
     

@@ -138,6 +138,7 @@
     <Compile Include="Controllers\DesignationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -251,6 +252,8 @@
     <Content Include="Views\Employee\ITDepartment.cshtml" />
     <Content Include="Views\Employee\SellsDepartment.cshtml" />
     <Content Include="Views\Employee\MarketingDepartment.cshtml" />
+    <Content Include="Views\Employee\CompanyInfo.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

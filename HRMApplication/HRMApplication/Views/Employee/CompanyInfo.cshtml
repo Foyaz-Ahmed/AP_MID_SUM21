@@ -1,0 +1,35 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "CompnayInfo";
+}
+
+<h2>EmployeeInformations</h2>
+<br />
+<a href="/Employee/EmployeeInformations" class="btn btn-success">Back</a>
+<table class="table table-condensed">
+    <tr>
+        <th>ID</th>
+        <th>@Html.ActionLink("Name", "CompanyInfo", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "Name" })</th>
+        <th>@Html.ActionLink("CompanyName", "CompanyInfo", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "CompanyName" })</th>
+        <th>@Html.ActionLink("DepartmentName", "CompanyInfo", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "DepartmentName" })</th>
+        <th>@Html.ActionLink("DesignationName", "CompanyInfo", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "DesignationName" })</th>
+        <th>@Html.ActionLink("Age", "CompanyInfo", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "Age" })</th>
+        <th>@Html.ActionLink("Salary", "CompanyInfo", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "Salary" })</th>
+        <th>@Html.ActionLink("JoiningDate", "CompanyInfo", new { sortOrder = ViewBag.sortOrder == null ? "Asc" : (ViewBag.sortOrder == "Asc" ? "Desc" : "Asc"), sortBy = "JoiningDate" })</th>
+    </tr>
+    @foreach (var info in Model.details_emp)
+    {
+        <tr>
+            <td>@info.Id</td>
+            <td>@info.Name</td>
+            <td>@info.CompanyName</td>
+            <td>@info.DepartmentName</td>
+            <td>@info.DesignationName</td>
+            <td>@info.Age</td>
+            <td>@info.Salary</td>
+            <td>@info.JoiningDate.</td>
+        </tr>
+    }
+
+</table>
+
